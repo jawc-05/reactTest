@@ -11,7 +11,8 @@ function App() {
 
   return(
     <>
-    <input type="text" onBlur={(e) => setNameUser(e.target.value)} />
+    <h3>Coloque aqui embaixo o usuário do GitHub:</h3>
+    <input className='input-style' type="text" onBlur={(e) => setNameUser(e.target.value)} />
 
       {nameUser.length > 4 &&(
         <>

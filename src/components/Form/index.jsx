@@ -37,7 +37,7 @@ const Form= () => {
         const media = soma / 3;
         if (media >= 7) {
             return(
-             <p>Olá! {name} você foi aprovado com média {media}</p>
+            <p>Olá! {name} você foi aprovado com média {media}</p>
             )
         } else {
             return (

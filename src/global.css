@@ -15,3 +15,8 @@
     --mainColor: #535c68;
     --secondaryColor: #111;
 }
+
+.input-style{
+    width: 400px; 
+    text-align: center;
+}
