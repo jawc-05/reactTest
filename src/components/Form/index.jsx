@@ -28,19 +28,37 @@ const Form= () => {
         }
 
 
-        if (calc < 18.5) {
-            return <p>Abaixo do peso</p>
-        } if (calc >= 18.5 && calc < 24.9) {
-            return <p>Peso normal</p>
-        } if (calc >= 25 && calc < 29.9) {
-            return <p>Sobrepeso</p>
-        } if (calc >= 30 && calc < 34.9) {
-            return <p>Obesidade grau 1</p>
-        } if (calc >= 35 && calc < 39.9) {
-            return <p>Obesidade grau 2</p>
-        } if (calc >= 40) {
-            return <p>Obesidade grau 3</p>
+        const numericImc = parseFloat(imc);
+        let classificacao = '';
+
+        switch (true) {
+            case (numericImc < 18.5):
+                classificacao = 'Abaixo do peso';
+                break;
+            case (numericImc >= 18.5 && numericImc < 24.9):
+                classificacao = 'Peso normal';
+                break;
+            case (numericImc >= 25 && numericImc < 29.9):
+                classificacao = 'Sobrepeso';
+                break;
+            case (numericImc >= 30 && numericImc < 34.9):
+                classificacao = 'Obesidade grau 1';
+                break;
+            case (numericImc >= 35 && numericImc < 39.9):
+                classificacao = 'Obesidade grau 2 (Severa)';
+                break;
+            case (numericImc >= 40):
+                classificacao = 'Obesidade grau 3 (Mórbida)';
+                break;
+            default:
+                return <p>Valor de IMC inválido.</p>;
         }
+
+        return (
+            <p>
+                Seu IMC: é de {imc} com base na tabela você está em {classificacao}
+            </p>
+        );
     }
 
 
