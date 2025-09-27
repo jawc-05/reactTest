@@ -1,5 +1,7 @@
 import { useState, useEffect, use } from "react";
 
+import styles from './Form.module.css'
+
 const Form= () => {
     const [height, setHeight] = useState(null); 
     const [weight, setWeight] = useState(null); 
@@ -64,13 +66,13 @@ const Form= () => {
 
     return(
         <form>
-            <div className="form-item">
+            <div className={styles.formItem}>
                 <label >Altura (m): </label>
                 <input type="number" step="0.01" placeholder="Ex: 1.85" onChange={changeHeight}/>
             </div>
                 
 
-            <div className="form-item">
+            <div className={styles.formItem}>
                 <label>Peso (kg): </label>
                 <input type="number" step="0.1" placeholder="Ex: 80" onChange={changeWeight}/>
             </div>
