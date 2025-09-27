@@ -1,8 +1,9 @@
 import { useState, useEffect, use } from "react";
 
 const Form= () => {
-    const [height, setHeight] = useState(0);
-    const [weight, setWeight] = useState(0);
+    const [height, setHeight] = useState(null); 
+    const [weight, setWeight] = useState(null); 
+    const [imc, setImc] = useState(null);
 
     useEffect(() => {
         console.log("O componente foi montado")
@@ -51,7 +52,7 @@ const Form= () => {
         <form>
             <input type="number" placeholder="Sua altura: " onChange={e => changeHeight(e)}/> <br />
             <input type="number"  placeholder="Seu peso: " onChange={e => changeWeight}/>
-            {/*renderizaResultado()*/}
+            {renderizaResultado()}
         </form>
     )
 }
