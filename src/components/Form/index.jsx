@@ -26,7 +26,7 @@ const Form= () => {
 
     const renderizaResultado = () => {
         if (imc == null){
-            return <p>Preencha sua altura (m) e peso (kg) para calcular o IMC.</p>
+            return <p>Preencha sua altura (m) e  <br /> peso (kg) para calcular o IMC.</p>
         }
 
 
@@ -58,7 +58,7 @@ const Form= () => {
 
         return (
             <p>
-                Seu IMC: é de {imc} com base na tabela você está em {classificacao}
+                Seu IMC: é de {imc} e com base <br /> na tabela você está em {classificacao}
             </p>
         );
     }
@@ -76,7 +76,7 @@ const Form= () => {
                 <label>Peso (kg): </label>
                 <input type="number" step="0.1" placeholder="Ex: 80" onChange={changeWeight}/>
             </div>
-            <div>
+            <div className={styles.renderizaResultado}>
                 {renderizaResultado()}
             </div>
         </form>
