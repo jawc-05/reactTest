@@ -23,7 +23,10 @@ const Form= () => {
     };
 
     const renderizaResultado = () => {
-        const calc = (height) / (weight);
+        if (imc == null){
+            return <p>Preencha sua altura (m) e peso (kg) para calcular o IMC.</p>
+        }
+
 
         if (calc < 18.5) {
             return <p>Abaixo do peso</p>
