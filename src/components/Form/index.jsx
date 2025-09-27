@@ -14,18 +14,12 @@ const Form= () => {
     }, []);
 
     const changeHeight = (evento) => {
+        setHeight(parseFloat(evento.target.value))
+        };
 
-        setHeight(lastState => {
-            console.log(lastState)
-
-            return evento.target.value
-        })
-
-        setWeight(lastState => {
-            console.log(lastState)
-
-            return evento.target.value
-                })
+    const changeWeight = (evento) => {
+        setWeight(parseFloat(evento.target.value))
+    };
 
     }
 
