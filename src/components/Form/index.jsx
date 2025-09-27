@@ -45,7 +45,8 @@ const Form= () => {
 
     return(
         <form>
-            <input type="number" placeholder="Sua altura: " onChange={e => changeHeight(e)}/>
+            <input type="number" placeholder="Sua altura: " onChange={e => changeHeight(e)}/> <br />
+            <input type="number"  placeholder="Seu peso: " onChange={e => changeWeight}/>
             {/*renderizaResultado()*/}
         </form>
     )
