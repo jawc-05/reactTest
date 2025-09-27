@@ -6,12 +6,13 @@ const Form= () => {
     const [imc, setImc] = useState(null);
 
     useEffect(() => {
-        console.log("O componente foi montado")
-
-        return () => {
-            console.log("O componente foi desmontado")
+        if (weight > 0 && height > 0) {
+            const calcIMC = weight / (height * height);
+            setImc(calcIMC.toFixed(2));
+        } else {
+            setImc(null);
         }
-    }, []);
+    }, [weight, height]);
 
     const changeHeight = (evento) => {
         setHeight(parseFloat(evento.target.value))
@@ -20,8 +21,6 @@ const Form= () => {
     const changeWeight = (evento) => {
         setWeight(parseFloat(evento.target.value))
     };
-
-    }
 
     const renderizaResultado = () => {
         const calc = (height) / (weight);
@@ -45,8 +44,10 @@ const Form= () => {
     return(
         <form>
             <label>Altura (m): </label>
-            <input type="number" step="0.01" placeholder="Ex: 1.85" onChange={changeHeight}/> <br />
-            <input type="number"  placeholder="Seu peso: " onChange={e => changeWeight}/>
+            <input type="number" step="0.01" placeholder="Ex: 1.85" onChange={changeHeight}/>
+
+            <label>Peso (kg): </label>
+            <input type="number" step="0.1" placeholder="Ex: 80" onChange={changeWeight}/>
             {renderizaResultado()}
         </form>
     )
