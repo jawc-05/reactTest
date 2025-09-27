@@ -64,12 +64,19 @@ const Form= () => {
 
     return(
         <form>
-            <label>Altura (m): </label>
-            <input type="number" step="0.01" placeholder="Ex: 1.85" onChange={changeHeight}/>
+            <div className="form-item">
+                <label >Altura (m): </label>
+                <input type="number" step="0.01" placeholder="Ex: 1.85" onChange={changeHeight}/>
+            </div>
+                
 
-            <label>Peso (kg): </label>
-            <input type="number" step="0.1" placeholder="Ex: 80" onChange={changeWeight}/>
-            {renderizaResultado()}
+            <div className="form-item">
+                <label>Peso (kg): </label>
+                <input type="number" step="0.1" placeholder="Ex: 80" onChange={changeWeight}/>
+            </div>
+            <div>
+                {renderizaResultado()}
+            </div>
         </form>
     )
 }
